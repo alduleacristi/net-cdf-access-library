@@ -1,21 +1,16 @@
-package ro.unitbv.fmi.netcdf;
+package ro.unitbv.fmi.tmis.netcdf;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import ucar.ma2.Array;
-import ucar.ma2.Index;
 import ucar.ma2.InvalidRangeException;
-import ucar.ma2.Range;
-import ucar.nc2.NCdumpW;
-import ucar.nc2.NetcdfFile;
-import ucar.nc2.Variable;
+
 
 public class Main {
-	public static void main(String[] args) throws InvalidRangeException {
-		NetcdfFile ncfile = null;
+	public static void main(String[] args) throws IOException, InvalidRangeException {
+		/*NetcdfFile ncfile = null;
 
 		try {
 			ncfile = NetcdfFile.open("F:/Disertatie/Date/Nasa/pr_day_BCSD_historical_r1i1p1_bcc-csm1-1_1950.nc");
@@ -31,12 +26,11 @@ public class Main {
 				System.out.println(v.read().getSize());
 				// Array array = v.read("0:10");
 				// Array array2 = precipitationVar.read("0:2, 0:1, 0:1");
-				/*
-				 * int[] origin = new int[] { 2, 0, 0 }; int[] size = new int[]
-				 * { 1, 2, 2 }; Array array3 = precipitationVar.read(origin,
-				 * size).reduce(0);
-				 */
-
+				
+				  int[] origin = new int[] { 2, 0, 0 }; int[] size = new int[]
+				  { 1, 2, 2 }; Array array3 = precipitationVar.read(origin,
+				  size).reduce(0);
+				 
 				List<Range> ranges = new ArrayList<>();
 				ranges.add(new ucar.ma2.Range(0, 0));
 				ranges.add(new ucar.ma2.Range(0, 3));
@@ -63,6 +57,9 @@ public class Main {
 			System.out.println("->The file was opened");
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
+		
+		NetCdfInstance cdfInstance = new NetCdfInstance("");
+		cdfInstance.getLatitudes();
 	}
 }
